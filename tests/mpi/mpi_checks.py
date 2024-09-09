@@ -64,6 +64,8 @@ class MPI_Comms_Base(rfm.RegressionTest):
         self.acct_str = job_info['account']
         self.num_cpus_per_task = 1
 
+        self.tags = {'mpi'}
+
 
     # Set job options for job script
     # NOTE: These job options don't have automatic ReFrame equivalent, so need to be manually set
@@ -306,6 +308,8 @@ class CorrectSends(rfm.RegressionTest):
         if cmds != []:
             self.prerun_cmds = cmds
 
+        self.tags = {'mpi'}
+
     # Test parameter(s)
     params = get_test_params(config_path, 'CorrectSends')
     send_mode = parameter(params['send-mode'])
@@ -480,6 +484,8 @@ class MemoryLeak(rfm.RegressionTest):
             'wait',
             f'python3 parse_memory.py -n {self.num_tasks} -N {self.num_nodes} -f mem_reports.log',
         ]
+
+        self.tags = {'mpi'}
 
     # Test parameter(s)
     params = get_test_params(config_path, 'MemoryLeak')
