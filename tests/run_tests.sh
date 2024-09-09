@@ -20,7 +20,7 @@ mode=""
 value=""
 
 # Process command-line arguments
-while getopts ':f:c:n:ae:o:' opt; do
+while getopts ':f:t:n:ae:o:' opt; do
   case "${opt}" in
     f)
       mode="test file"
